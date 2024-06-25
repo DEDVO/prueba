@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <title>Ecuación Cuadrática</title>
 </head>
 <body>
-    <h1>Resolver Ecuación Cuadrática</h1>
-    <form method="POST" action="/datos">
-        <label for="a">Coeficiente a:</label>
-        <input type="text" id="a" name="a" required>
-        <br>
-        <label for="b">Coeficiente b:</label>
-        <input type="text" id="b" name="b" required>
-        <br>
-        <label for="c">Coeficiente c:</label>
-        <input type="text" id="c" name="c" required>
-        <br>
-        <button type="submit">Calcular</button>
-    </form>
-    {% if resultado %}
-        <p>Resultado: {{ resultado }}</p>
-    {% endif %}
+    <div class="container mt-5" class="mx-auto" style="width: 400px;">
+        <h1 class="mb-4" style="">Resolver Ecuación Cuadrática</h1>
+        <form method="POST" action="/datos">
+            <div class="mb-3">
+                <label for="a" class="form-label">Coeficiente a:</label>
+                <input type="text" id="a" name="a" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="b" class="form-label">Coeficiente b:</label>
+                <input type="text" id="b" name="b" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="c" class="form-label">Coeficiente c:</label>
+                <input type="text" id="c" name="c" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary" >Calcular</button>
+        </form>
+        {% if resultado %}
+            <div class="mt-4">
+                <p class="alert alert-info">Resultado: {{ resultado }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script src="/static/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
